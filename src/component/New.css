@@ -1,0 +1,27 @@
+.ul{
+  width: 180px;
+  height: 180px;
+  float: left;
+  margin: 10px;
+
+}
+.h5{
+  text-align: center;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     overflow: hidden;
+}
+.b{
+
+  width: 140px;
+  height: 140px;
+}
+.b:hover{
+transform: scale(1.2);
+}
+.bg{
+  background: black;
+}
+.container{
+
+}

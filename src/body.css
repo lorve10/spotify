@@ -1,0 +1,21 @@
+body{
+  background-color: #181818;
+}
+.img{
+    width: 140px;
+    height:60px;
+}
+
+.input{
+  margin-left: 160px;
+  width: 20%;
+
+}
+header{
+background-color: #3e3e3e;
+  width: 120%;
+  height: 140%;
+}
+.container{
+
+}

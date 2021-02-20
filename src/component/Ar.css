@@ -1,0 +1,25 @@
+
+.ar{
+  width: 180px;
+  height: 180px;
+  float: left;
+  margin: 10px;
+
+}
+.h9{
+  text-align: center;
+     white-space: nowrap;
+     text-overflow: ellipsis;
+     overflow: hidden;
+}
+.a{
+
+  width: 140px;
+  height: 140px;
+}
+.bg{
+  background: black;
+}
+.container{
+
+}
