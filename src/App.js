@@ -5,6 +5,13 @@ import body from './body.css';
 import Artistas from './component/Artistas';
 import Canciones from './component/Canciones';
 import Newreleases from './component/Newreleases';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  NavLink
+} from "react-router-dom";
 
 const App = () => {
 
@@ -103,52 +110,45 @@ const App = () => {
 
 
   return (
-    <html>
-     <div className="row">
-        <header>
-            <nav className="nav">
-                <img className="img " src="./spotify-logo-branca-white.png" ></img>
-                  <div class="input"  >
-                      <input type="text" className="form-control bg-dark mt-2 text-white"
-                      placeholder="Buscar Artista"
-                      onChange={({target:{value}})=>setBuscar(value)}
-                      onClick={hal}  value={buscar}
-                      />
+     <div>
+    <Router>
+    <header>
+           <nav className="nav">
 
-                  </div>
-                  <div class="input">
-                      <input type="text" className="form-control bg-dark mt-2 text-white "
-                      placeholder="Buscar Cancion" aria-label="Search"
-                      onChange={({target:{value}})=>setleer(value)}
-                      value={leer}  onClick={cancion}
-                      />
-                  </div>
-              </nav>
-        </header>
-        </div>
-          <body className="cuerpo ">
-            <div className="container">
+        <Link className="e" to="/Releases"><img className="img " src="./spotify.png" ></img></Link>
+                 <div class="input"  >
+                    <Link className="e" to="/Artistas"><input type="text" className="form-control bg-dark mt-2 text-white"
+                     placeholder="Buscar Artista"
+                     onChange={({target:{value}})=>setBuscar(value)}
+                     onClick={hal}  value={buscar}
+                     /></Link>
 
+                 </div>
+                 <div class="input">
+                     <Link className="e" to="/Canciones"><input type="text" className="form-control bg-dark mt-2 text-white "
+                     placeholder="Buscar Cancion" aria-label="Search"
+                     onChange={({target:{value}})=>setleer(value)}
+                     value={leer}  onClick={cancion}
+                     /></Link>
+                 </div>
+             </nav>
+             </header>
+             <body>
 
-
-
-            <div className="releases">
-            { <Newreleases releases={releases.listreleasesAPI}/>}
-
-            </div>
-
-                <div className="artista">
-              { <Artistas artista={artista.listaFronAPI} />}
-                </div>
-                <div id="canciones" >
-                  {<Canciones canciones={canciones.listaCanciones}/>}
-                </div>
-
-
-
-            </div>
-          </body>
-     </html>
+             <Switch>
+                  <Router path="/Releases">
+                      {Releases()}
+                  </Router>
+                  <Router path="/Artistas">
+                     {Artista()}
+                  </Router>
+                  <Router path="/Canciones">
+                      <Canciones canciones={canciones.listaCanciones}/>
+                  </Router>
+             </Switch>
+             </body>
+  </Router>
+       </div>
   );
 }
 
